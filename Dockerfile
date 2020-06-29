@@ -4,8 +4,8 @@ FROM ros:melodic-ros-base
 ADD scripts/container/* /
 RUN chmod +x /*.bash
 
-RUN bash -c /setup_workspace.bash
-RUN bash -c /install_dependencies.bash
+RUN bash -c "/setup_workspace.bash"
+RUN bash -c "DEBIAN_FRONTEND=noninteractive /install_dependencies.bash"
 
 COPY packages/ /root/catkin_ws/src
 
